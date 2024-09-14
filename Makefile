@@ -9,11 +9,11 @@ OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 all:$(BIN)
 
 $(BIN): $(OBJS)
-	mkdir -p $(dir $@)
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 $(OBJ)/%.o: $(SRC)/%.c
-	mkdir -p $(OBJ)
+	@mkdir -p $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
